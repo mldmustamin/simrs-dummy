@@ -2,7 +2,7 @@
 
 Tanggal: 2026-05-26 (Asia/Makassar)
 Project: SIMRS Dummy
-Remote: `https://github.com/FiyyaLisanaDeV/simrs-dummy.git`
+Remote: `https://github.com/mldmustamin/simrs-dummy.git`
 Branch: `main`
 Checkpoint commit: `db8c047b634f5baaf28e63bac7169fa8239fcddc`
 
@@ -111,3 +111,9 @@ branch kerja lokal setelah baseline 26 Mei 2026.
 - `docs/TESTING_MATRIX.md` (matriks bukti uji).
 - `docs/RISK_REGISTER.md` (risiko residual).
 - `docs/TASK_LIST.md` (status pekerjaan dan backlog).
+
+## Update Progress - 2026-05-27 (Sinkronisasi GitHub)
+
+### Perubahan yang sudah diterapkan
+- **Git Fix**: Menghapus *nested git repository* di folder `simrs-backend` untuk menyatukan version control dalam *root directory*.
+- **Git Push**: Melakukan sinkronisasi repositori lokal secara penuh dan dipublikasikan (via force push) ke repository GitHub `https://github.com/mldmustamin/simrs-dummy.git` pada branch `main`.

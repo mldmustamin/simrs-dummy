@@ -2,6 +2,15 @@
 
 Semua perubahan dan penambahan fitur yang dilakukan pada proyek simulasi SIMRS.
 
+## [v1.1.1] - Sinkronisasi Repositori GitHub & Perbaikan Struktur
+**Tanggal:** 27 Mei 2026
+
+### 🔧 Peningkatan (Enhancements)
+- **Struktur Repositori Git:**
+  - Menghapus riwayat *nested git* pada sub-direktori `simrs-backend` agar proyek terintegrasi pada satu level *version control*.
+- **Sinkronisasi Kode (Deployment Repository):**
+  - Mengunggah seluruh revisi akhir sistem ke repository GitHub `mldmustamin/simrs-dummy`.
+
 ## [v1.1.0] - Pembaruan Simulasi & Dasbor Monitoring
 **Tanggal:** 27 Mei 2026
 

@@ -4,6 +4,13 @@ Catatan perubahan (Changelog) untuk rilis SIMRS-Web (Aladin).
 
 ---
 
+## [0.1.2-dev] - 2026-05-27
+Status: **SYNCHRONIZED**
+
+### ✅ Perbaikan Struktur Repositori
+- Memperbaiki konflik dan anomali *nested git repository* yang sebelumnya terdapat di dalam direktori `simrs-backend`.
+- Melakukan penyelarasan versi (force push) untuk memastikan kode tersinkronisasi secara akurat ke *remote repository* `https://github.com/mldmustamin/simrs-dummy.git` pada branch `main`.
+
 ## [0.1.1-dev] - 2026-05-27
 Status: **STABILIZATION IN PROGRESS**
 
