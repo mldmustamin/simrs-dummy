@@ -1,15 +1,17 @@
-# Strategi Integrasi BPJS (Eventually Consistent)
-*Aturan khusus agen untuk memprogram Bridging V-Claim agar tidak menyandera operasional Faskes.*
+# Strategi Integrasi BPJS (Enterprise to Pragmatic)
+*Visi Utama: Sinkronisasi real-time paripurna, didukung oleh sistem *Eventually Consistent* sebagai peredam kejut.*
 
-## 1. Flowchart Pendaftaran Asinkron
-1. Pasien datang membawa rujukan/kartu. Petugas klik "Daftar BPJS".
-2. **Frontend** menembak API Backend `POST /api/registrasi`.
-3. **Backend** langsung menyimpan pasien ke tabel `reg_periksa` (Lokal) dan men-generate `no_rawat`. Backend menyuntikkan *task* pembuatan SEP ke tabel `simrs_web_background_job`.
-4. **Backend** merespons `200 OK` ke frontend dalam waktu kurang dari 500ms. Pasien langsung disuruh duduk di depan Poli, **TANPA** memegang kertas SEP.
-5. **Background Worker** (Cron Job) yang berjalan setiap menit mengambil *task* tersebut dan menembak API V-Claim BPJS Kemenkes.
-6. Jika V-Claim *timeout* atau MT (Maintenance), *worker* akan menunda (*delay*) dan mencoba lagi (*retry exponential backoff*) 5 menit kemudian.
-7. Ketika *worker* berhasil mendapat balasan dari BPJS, nomor SEP diekstrak dan disimpan ke dalam tabel `bridging_sep` milik pasien.
+## 1. Flow Real-time (Mode Ideal)
+Pada kondisi jaringan BPJS sehat, integrasi beroperasi 100% *real-time*.
+1. Petugas klik "Daftar BPJS".
+2. API langsung menembak V-Claim, SEP terbit instan (< 1 detik).
+3. Pasien memegang validasi digital dan langsung menuju Poli.
+4. *Trigger* ke SEP dan INA-CBG terhubung mulus.
 
-## 2. Penyelesaian Administratif Belakangan
-- Kertas SEP bisa di-*print* kolektif oleh admin loket di sore hari, atau cukup ditandatangani pasien secara elektronik di akhir layanan saat mengambil obat di Apotek.
-- Arsitektur ini memastikan loket pendaftaran bebas dari penumpukan panjang saat server BPJS nasional sedang tumbang.
+## 2. Flow Asinkron (Mode Fallback / Pragmatis)
+Ketika server V-Claim tumbang, ERP kita **TIDAK BOLEH** ikut tumbang. Sistem harus beralih mulus ke mode Asinkron.
+1. Frontend mengirim *request* ke backend, backend mendeteksi *timeout* dari V-Claim.
+2. Backend seketika mengaktifkan mode *Graceful Degradation*: Pasien tetap disimpan di `reg_periksa` (Lokal) dengan nomor antrean RS.
+3. Pembuatan SEP dialihkan ke tabel `simrs_web_background_job`.
+4. *Cron Job Worker* akan mencoba kembali (*retry exponential backoff*) tanpa disadari petugas.
+5. Saat berhasil, SEP diinjeksi ke tabel pasien. Petugas administrasi menyelesaikan sisa urusan kertas secara kolektif di kemudian waktu tanpa menghalangi jalan pasien ke ruang periksa.

@@ -1,16 +1,15 @@
 # Panduan Arsitektur Frontend (React/Vite)
-*Panduan teknis bagi AI Agent untuk membangun antarmuka UI/UX yang Offline-First.*
+*Visi Utama: UI/UX canggih, responsif, dan *paperless* mutlak, dengan fitur Offline-Ready sebagai katup pengaman.*
 
-## 1. Implementasi PWA & Offline Storage
-Frontend tidak boleh lumpuh (*White Screen of Death*) saat kabel LAN dicabut.
-- **Service Workers**: Gunakan Workbox untuk melakukan *caching* semua aset statis (HTML, JS, CSS).
-- **IndexedDB (Lokal Database)**: Gunakan library seperti `localForage` atau `Dexie.js` untuk menyimpan antrean *request* POST/PUT saat aplikasi mendeteksi `navigator.onLine === false`.
+## 1. Implementasi PWA & Offline Storage (Kapasitas Fallback)
+Meskipun didesain untuk Cloud & Local Server bertenaga tinggi, Frontend tidak boleh menampilkan *White Screen of Death* saat LAN terputus sementara.
+- **Standar Utama**: Operasi sinkron dan asinkron melalui Websocket/REST yang cepat.
+- **Lapisan Pragmatis**: Gunakan Workbox dan `localForage` (IndexedDB) untuk menampung *request* sesaat jika aplikasi mendeteksi `navigator.onLine === false`. Begitu terkoneksi, lakukan sinkronisasi otomatis di latar belakang.
 
 ## 2. State Management & Optimistic UI
-Sistem harus terasa secepat kilat (*snappy*) di mata dokter, tanpa loading *spinner* berlarut-larut.
-- Terapkan pola **Optimistic UI Updates** menggunakan React Query atau Zustand. Ketika dokter menekan tombol "Simpan Resep", antarmuka langsung menampilkannya sebagai berhasil tersimpan, sementara *request* sinkronisasi terjadi diam-diam di *background*.
-- Jika sinkronisasi gagal karena internet terputus, tambahkan ikon kecil ⚠️ (Pending Sync) di sebelah data tersebut, bukan memblokir layar dengan pesan *Error*.
+- Terapkan pola **Optimistic UI Updates** menggunakan React Query atau Zustand. Antarmuka harus menyajikan pengalaman *Enterprise* di mana aksi (simpan, klik, geser) bereaksi instan tanpa hambatan visual (*spinner*).
+- Indikator status jaringan harus terlihat elegan di sudut layar (Online / Pending Sync).
 
-## 3. Keyboard-First Navigation
-Di faskes daerah, mouse sering lambat atau meja perawat terlalu sempit.
-- Pastikan semua *form* pelayanan kritis (Kasir, Apotek, Pendaftaran) mendukung navigasi penuh menggunakan tombol `Tab`, `Enter`, dan *Shortcut* keyboard khusus (misal `Alt+S` untuk simpan) tanpa harus menggunakan *mouse*.
+## 3. Aksesibilitas: Keyboard-First & Touch-First
+- UI/UX harus merespons interaksi *Tablet/Touchscreen* untuk dokter yang *visite* menggunakan iPad di bangsal VIP (Mode Ideal).
+- Sekaligus mendukung navigasi ekstrem berbasis *Keyboard* (Tab, Enter, Alt+S) untuk petugas loket BPJS yang dituntut kecepatan tinggi tanpa memegang *mouse* (Mode Pragmatis).
