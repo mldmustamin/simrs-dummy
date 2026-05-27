@@ -1,0 +1,22 @@
+# Local hidden workspace metadata and credentials
+/.*/
+docs/archive_legacy_docs/
+simrs-backend/prisma/schema-introspect.prisma
+**/.git/
+
+# Dependencies and generated builds
+**/node_modules/
+**/dist/
+**/coverage/
+simulation/venv/
+**/__pycache__/
+**/*.pyc
+
+# Runtime and local configuration
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+
+# Captures database-backed notebook output and local connection configuration.
+simulation/simrs_real_db_simulation.ipynb
