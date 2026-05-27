@@ -4,7 +4,9 @@ Dokumen ini lahir dari tamparan realitas lapangan. Rancangan *Enterprise* yang t
 
 Tantangan utama HIS (Hospital Information System) di Indonesia bukanlah **"bagaimana membuat sistem canggih"**, melainkan **"bagaimana membuat sistem tetap hidup di tengah kekacauan operasional nyata."**
 
-Oleh karena itu, ERP ini akan mengadopsi 7 Pilar Arsitektur Pragmatis:
+Oleh karena itu, ERP ini akan dibangun dengan **Multi-Model Implementation Architecture**. Standarisasi ideal (*Enterprise/Smart Hospital*) tetap menjadi **tujuan dan standar utama** dari produk ini, namun sistem memiliki lapisan (*layer*) adaptabilitas yang memungkinkannya beroperasi dalam mode pragmatis jika infrastruktur klien belum memadai. 
+
+Berikut adalah 7 Pilar Arsitektur Multi-Model kita:
 
 ## 1. Offline-First Architecture (Bukan Cloud-First)
 - **Kondisi Nyata:** Internet mati, listrik byar-pet, switch jaringan *unmanaged*.
@@ -32,12 +34,11 @@ Oleh karena itu, ERP ini akan mengadopsi 7 Pilar Arsitektur Pragmatis:
   - Perawat/Dokter dapat menginput tindakan dan meresepkan obat secara retrospektif (input belakangan) dengan penanda waktu (*timestamp*) mundur.
   - Apotek dapat melayani "Resep Lisan Darurat" yang transaksinya di-*pending* di sistem sampai dokter memvalidasinya secara digital 24 jam kemudian.
 
-## 5. Progressive Complexity (Jangan One-Size-Fits-All)
-- **Kondisi Nyata:** Puskesmas gunung dengan 1 komputer dan tenaga rangkap tidak butuh arsitektur *Event-Driven* kamar operasi.
-- **Solusi Arsitektur:**
-  - Pendekatan Modular / *Feature Flags*.
-  - **Mode Lite:** Hanya mengaktifkan Loket, Poli Dasar, dan Kasir Tunai. Layar dibuat sangat sederhana dan ringan.
-  - **Mode Enterprise:** Untuk RS Tipe B dengan *Dashboard*, *Bed Management*, CSSD, dan pembagian porsi *Fee-for-Service* yang rumit.
+## 5. Multi-Model / Progressive Complexity (Ideal vs Pragmatic)
+- **Kondisi Nyata:** Puskesmas gunung dengan 1 komputer tidak butuh arsitektur *Event-Driven* kamar operasi, sementara RS Swasta elit membutuhkannya.
+- **Solusi Arsitektur (Multi-Model):**
+  - **Model Ideal (Enterprise Mode):** Standar utama ERP yang fully-synchronous, event-driven, paperless absolut, dan terkoneksi IoT.
+  - **Model Pragmatis (Lite/Edge Mode):** Dapat diaktifkan (*feature toggles*) untuk menoleransi *offline*, sinkronisasi lambat, dan memangkas kewajiban input data rumit menjadi simpel. Jangan memaksakan *One-Size-Fits-All*.
 
 ## 6. Hybrid Native (Kertas Belum Mati)
 - **Kondisi Nyata:** Akreditasi, ketakutan litigasi medis, dan kenyamanan dokter senior memaksa penggunaan *Double Input* (kertas lalu sistem). Triple workload terjadi (Kertas -> SIMRS -> Excel).
