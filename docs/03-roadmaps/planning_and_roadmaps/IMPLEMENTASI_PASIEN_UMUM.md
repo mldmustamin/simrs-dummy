@@ -3,7 +3,7 @@
 Dokumen ini merinci rencana implementasi sistem untuk menangani alur pelayanan "Pasien Umum" (pembayaran mandiri/out-of-pocket).
 
 ## 1. Latar Belakang dan Tujuan
-Pasien umum tidak menggunakan jaminan BPJS, sehingga alurnya lebih menitikberatkan pada kelancaran dan keamanan transaksi finansial di kasir, serta akurasi pemotongan stok di farmasi. Berdasarkan evaluasi dari `CURRENT_STATE.md` dan `Build_Summary.md`, beberapa modul saat ini hanya prototipe dan berisiko tinggi (terutama *race condition* di Kasir dan tidak adanya pemotongan inventori Farmasi).
+Pasien umum tidak menggunakan jaminan BPJS, sehingga alurnya lebih menitikberatkan pada kelancaran dan keamanan transaksi finansial di kasir, serta akurasi pemotongan stok di farmasi. Berdasarkan evaluasi dari `docs/04-status/project_management_and_logs/CURRENT_STATE.md` dan `docs/04-status/project_management_and_logs/Build_Summary.md`, beberapa modul saat ini hanya prototipe dan berisiko tinggi (terutama *race condition* di Kasir dan tidak adanya pemotongan inventori Farmasi).
 
 ## 2. Rencana Perubahan Modul
 

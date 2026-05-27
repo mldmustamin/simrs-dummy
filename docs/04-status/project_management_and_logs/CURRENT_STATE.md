@@ -5,7 +5,7 @@
 > transaksi Kasir/Farmasi, serta mutasi stok Farmasi transaksional. Uraian
 > lama di bawah tetap merekam evaluasi awal dan tidak lagi akurat untuk item
 > tersebut. Acuan remediation terkini adalah
-> [BEST_PRACTICE_FIX_PLAN.md](BEST_PRACTICE_FIX_PLAN.md).
+> [BEST_PRACTICE_FIX_PLAN.md](../../02-operations/engineering_and_operations/BEST_PRACTICE_FIX_PLAN.md).
 
 ## 1. Ringkasan Status
 Proyek SIMRS-Web saat ini telah berhasil menyambungkan UI modern (React/Vite) dengan backend (NestJS/Prisma) yang melakukan *read/write* ke database asli SIMRS Dummy secara *symbiosis*. Namun, status penyelesaian yang pernah dicatat pada dokumentasi fase awal **bersifat prototype fungsional (Happy Path)**. Sistem **BELUM LAYAK PRODUCTION** karena mengabaikan pengamanan konkurensi (race condition), validasi ketat inventori farmasi, dan lapisan keamanan RBAC (Role-Based Access Control).

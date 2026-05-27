@@ -81,7 +81,7 @@ Backend dimulai dari `simrs-backend/src/main.ts`. Bootstrap:
 
 ### 3.3 Mockup Visual Referensi
 
-![Mockup dashboard SIMRS Dummy](assets/simrs-dummy-dashboard-mockup.png)
+![Mockup dashboard SIMRS Dummy](../../assets/simrs-dummy-dashboard-mockup.png)
 
 Mockup ini merupakan referensi tampilan desktop dashboard SIMRS Dummy. Komponen visualnya mengikuti cakupan frontend saat ini: ringkasan operasional, akses cepat modul klinis dan administratif, antrean, serta status layanan menggunakan data pengembangan.
 
@@ -91,14 +91,17 @@ Mockup ini merupakan referensi tampilan desktop dashboard SIMRS Dummy. Komponen 
 simrs-web/
 |-- README.md                       # halaman awal proyek
 |-- docs/
-|   |-- Build_Summary.md             # dokumen ini
-|   |-- CURRENT_STATE.md             # status dan keterbatasan saat ini
-|   |-- DECISION_LOG.md              # keputusan teknis
-|   |-- PRODUCTION_READINESS_CHECKLIST.md
-|   |-- RELEASE_NOTES.md
-|   |-- RISK_REGISTER.md
-|   |-- ROLLBACK_PLAN.md
-|   `-- SECURITY_AND_ACCESS_CONTROL.md
+|   |-- 01-architecture/
+|   |   |-- Realitas.md
+|   |   `-- Implementasi/
+|   |-- 02-operations/
+|   |   `-- engineering_and_operations/
+|   |-- 03-roadmaps/
+|   |   `-- planning_and_roadmaps/
+|   |-- 04-status/
+|   |   `-- project_management_and_logs/
+|   |-- archive/
+|   `-- assets/
 |-- simrs-backend/
 |   |-- .env.example                 # template konfigurasi lokal
 |   |-- package.json                 # perintah backend dan dependency
@@ -417,14 +420,14 @@ atau dengan rollback yang telah ditinjau.
 
 | File | Kegunaan |
 | --- | --- |
-| `README.md` | Orientasi dan langkah awal pengembangan |
-| `docs/CURRENT_STATE.md` | Pernyataan status terkini dan keterbatasan |
-| `docs/DECISION_LOG.md` | Riwayat keputusan arsitektur dan operasional |
-| `docs/RISK_REGISTER.md` | Daftar risiko kritis |
-| `docs/TESTING_MATRIX.md` | Skenario uji yang harus dipenuhi |
-| `docs/PRODUCTION_READINESS_CHECKLIST.md` | Kriteria penggunaan nyata |
-| `docs/ROLLBACK_PLAN.md` | Tindakan pemulihan saat insiden |
-| `docs/SECURITY_AND_ACCESS_CONTROL.md` | Arah desain kontrol akses |
+| `../../README.md` | Orientasi dan langkah awal pengembangan |
+| `CURRENT_STATE.md` | Pernyataan status terkini dan keterbatasan |
+| `DECISION_LOG.md` | Riwayat keputusan arsitektur dan operasional |
+| `RISK_REGISTER.md` | Daftar risiko kritis |
+| `TESTING_MATRIX.md` | Skenario uji yang harus dipenuhi |
+| `PRODUCTION_READINESS_CHECKLIST.md` | Kriteria penggunaan nyata |
+| `ROLLBACK_PLAN.md` | Tindakan pemulihan saat insiden |
+| `SECURITY_AND_ACCESS_CONTROL.md` | Arah desain kontrol akses |
 
 ## 14. Kesimpulan Build
 

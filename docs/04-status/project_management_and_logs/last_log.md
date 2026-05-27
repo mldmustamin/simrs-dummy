@@ -17,11 +17,12 @@ tetap menunjuk keadaan proyek yang sudah diverifikasi.
 
 - `README.md` telah diganti dengan dokumentasi halaman depan proyek yang
   memuat fitur, struktur, setup, konfigurasi, validasi, dan tautan dokumen.
-- `docs/Build_Summary.md` telah ditambahkan sebagai ringkasan build rinci
-  disertai aset mockup visual dashboard pada `docs/assets/`.
+- `docs/04-status/project_management_and_logs/Build_Summary.md` telah
+  ditambahkan sebagai ringkasan build rinci disertai aset mockup visual
+  dashboard pada `docs/assets/`.
 - Branding dokumentasi publik telah menggunakan `SIMRS Dummy`.
 - Arsip dokumentasi sesi lama tidak lagi dilacak Git dan tetap tersedia lokal
-  di `docs/archive_legacy_docs/`.
+  di `docs/archive/2026-05/roadmap-exploration-archive.zip`.
 - File referensi skema introspeksi penuh tidak dipublikasikan dan tetap
   tersedia lokal di `simrs-backend/prisma/schema-introspect.prisma`.
 - Konfigurasi autentikasi publik menggunakan `SIMRS_ADMIN_USERNAME_KEY` dan
@@ -33,7 +34,7 @@ tetap menunjuk keadaan proyek yang sudah diverifikasi.
 
 - `.secrets/`
 - `.workspace/`
-- `docs/archive_legacy_docs/`
+- `docs/archive/2026-05/roadmap-exploration-archive.zip`
 - `simrs-backend/.env`
 - `simrs-backend/prisma/schema-introspect.prisma`
 - build output, dependency directory, log, virtual environment, dan notebook
@@ -108,9 +109,12 @@ branch kerja lokal setelah baseline 26 Mei 2026.
 ### Referensi dokumen utama
 
 - `docs/BEST_PRACTICE_FIX_PLAN.md` (rencana dan progres detail).
-- `docs/TESTING_MATRIX.md` (matriks bukti uji).
-- `docs/RISK_REGISTER.md` (risiko residual).
-- `docs/TASK_LIST.md` (status pekerjaan dan backlog).
+- `docs/04-status/project_management_and_logs/TESTING_MATRIX.md`
+  (matriks bukti uji).
+- `docs/04-status/project_management_and_logs/RISK_REGISTER.md`
+  (risiko residual).
+- `docs/04-status/project_management_and_logs/TASK_LIST.md`
+  (status pekerjaan dan backlog).
 
 ## Update Progress - 2026-05-27 (Sinkronisasi GitHub)
 
