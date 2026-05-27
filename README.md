@@ -19,7 +19,10 @@ di atas database MariaDB `sik`.
 | Memahami fungsi tiap layanan | [Modul aplikasi](#modul-aplikasi) |
 | Menjalankan aplikasi | [Mulai lokal](#mulai-lokal) |
 | Mengecek batasan aktual | [Status dan risiko](#status-dan-risiko) |
-| Membaca dokumen teknis | [Dokumentasi](#dokumentasi) |
+| Membaca dokumen teknis | [Gateway docs](docs/GATEWAY.md) |
+| Melihat peta dokumen | [Index docs](docs/INDEX.md) |
+| Melihat panduan agent | [Agent guide](docs/AGENT_GUIDE.md) |
+| Melihat script generator | [Master scripts](master/README.md) |
 | Membaca referensi fitur | [Pustaka](Pustaka.md) |
 
 ## Gambaran Alur
@@ -176,8 +179,18 @@ nomor nota/jurnal belum aman untuk transaksi bersamaan di lingkungan produksi.
 
 ```text
 simrs-web/
-|-- docs/                  # status, risiko, testing, readiness dan mockup
-|   `-- assets/mockups/     # visual referensi setiap modul
+|-- docs/                  # arsitektur, operasi, roadmap, status, arsip
+|   |-- 01-architecture/
+|   |-- 02-operations/
+|   |-- 03-roadmaps/
+|   |-- 04-status/
+|   |-- archive/
+|   |-- assets/
+|   |-- AGENT_GUIDE.md
+|   |-- GATEWAY.md
+|   |-- INDEX.md
+|   `-- README.md
+|-- master/                # script generator dan utilitas dokumen
 |-- simrs-backend/
 |   |-- prisma/            # pemetaan model database
 |   |-- src/               # modul API NestJS
@@ -256,8 +269,8 @@ Prioritas sebelum penggunaan nyata:
 | Klaim | Bangun integrasi atau mock SEP BPJS yang terkendali |
 | Klinis | Wajibkan dan validasi ICD-10 dalam alur RME |
 
-Lihat [CURRENT_STATE.md](docs/CURRENT_STATE.md) dan
-[PRODUCTION_READINESS_CHECKLIST.md](docs/PRODUCTION_READINESS_CHECKLIST.md)
+Lihat [GATEWAY.md](docs/GATEWAY.md), [CURRENT_STATE.md](docs/04-status/project_management_and_logs/overview/CURRENT_STATE.md) dan
+[PRODUCTION_READINESS_CHECKLIST.md](docs/02-operations/engineering_and_operations/PRODUCTION_READINESS_CHECKLIST.md)
 untuk status teknis yang menjadi acuan. Referensi pelengkap fitur nanti ada di
 [Pustaka.md](Pustaka.md).
 
@@ -265,13 +278,14 @@ untuk status teknis yang menjadi acuan. Referensi pelengkap fitur nanti ada di
 
 | Dokumen | Isi |
 | --- | --- |
-| [Build Summary](docs/Build_Summary.md) | Arsitektur, modul, alur, konfigurasi dan status build |
-| [Best Practice Fix Plan](docs/BEST_PRACTICE_FIX_PLAN.md) | Baseline remediation, urutan fix, quality gate dan referensi resmi |
-| [Current State](docs/CURRENT_STATE.md) | Status implementasi serta batasan aktual |
-| [Decision Log](docs/DECISION_LOG.md) | Keputusan teknis yang berlaku |
-| [Risk Register](docs/RISK_REGISTER.md) | Risiko dan mitigasi |
-| [Testing Matrix](docs/TESTING_MATRIX.md) | Skenario verifikasi |
-| [Production Checklist](docs/PRODUCTION_READINESS_CHECKLIST.md) | Syarat sebelum penggunaan nyata |
-| [Rollback Plan](docs/ROLLBACK_PLAN.md) | Prosedur pemulihan |
-| [Security and Access Control](docs/SECURITY_AND_ACCESS_CONTROL.md) | Arah kontrol akses |
+| [Gateway docs](docs/GATEWAY.md) | Entry point AI untuk navigasi dokumentasi |
+| [Build Summary](docs/04-status/project_management_and_logs/overview/Build_Summary.md) | Arsitektur, modul, alur, konfigurasi dan status build |
+| [Best Practice Fix Plan](docs/02-operations/engineering_and_operations/BEST_PRACTICE_FIX_PLAN.md) | Baseline remediation, urutan fix, quality gate dan referensi resmi |
+| [Current State](docs/04-status/project_management_and_logs/overview/CURRENT_STATE.md) | Status implementasi serta batasan aktual |
+| [Decision Log](docs/04-status/project_management_and_logs/governance/DECISION_LOG.md) | Keputusan teknis yang berlaku |
+| [Risk Register](docs/02-operations/engineering_and_operations/RISK_REGISTER.md) | Risiko dan mitigasi |
+| [Testing Matrix](docs/02-operations/engineering_and_operations/TESTING_MATRIX.md) | Skenario verifikasi |
+| [Production Checklist](docs/02-operations/engineering_and_operations/PRODUCTION_READINESS_CHECKLIST.md) | Syarat sebelum penggunaan nyata |
+| [Rollback Plan](docs/02-operations/engineering_and_operations/ROLLBACK_PLAN.md) | Prosedur pemulihan |
+| [Security and Access Control](docs/02-operations/engineering_and_operations/SECURITY_AND_ACCESS_CONTROL.md) | Arah kontrol akses |
 | [Pustaka](Pustaka.md) | Referensi pelengkap fitur dan integrasi |

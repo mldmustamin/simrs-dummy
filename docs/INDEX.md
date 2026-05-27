@@ -36,12 +36,12 @@ Untuk gateway navigasi AI yang paling singkat, gunakan [GATEWAY.md](GATEWAY.md).
 
 ## 4. Status Proyek
 
-- [Build Summary](04-status/project_management_and_logs/Build_Summary.md)
-- [Current State](04-status/project_management_and_logs/CURRENT_STATE.md)
-- [Decision Log](04-status/project_management_and_logs/DECISION_LOG.md)
-- [Release Notes](04-status/project_management_and_logs/RELEASE_NOTES.md)
-- [Task List](04-status/project_management_and_logs/TASK_LIST.md)
-- [Last Log](04-status/project_management_and_logs/last_log.md)
+- [Build Summary](04-status/project_management_and_logs/overview/Build_Summary.md)
+- [Current State](04-status/project_management_and_logs/overview/CURRENT_STATE.md)
+- [Decision Log](04-status/project_management_and_logs/governance/DECISION_LOG.md)
+- [Release Notes](04-status/project_management_and_logs/governance/RELEASE_NOTES.md)
+- [Task List](04-status/project_management_and_logs/backlog/TASK_LIST.md)
+- [Last Log](04-status/project_management_and_logs/overview/last_log.md)
 
 ## 5. Arsip
 

@@ -421,13 +421,13 @@ atau dengan rollback yang telah ditinjau.
 | File | Kegunaan |
 | --- | --- |
 | `../../README.md` | Orientasi dan langkah awal pengembangan |
-| `CURRENT_STATE.md` | Pernyataan status terkini dan keterbatasan |
-| `DECISION_LOG.md` | Riwayat keputusan arsitektur dan operasional |
-| `RISK_REGISTER.md` | Daftar risiko kritis |
-| `TESTING_MATRIX.md` | Skenario uji yang harus dipenuhi |
-| `PRODUCTION_READINESS_CHECKLIST.md` | Kriteria penggunaan nyata |
-| `ROLLBACK_PLAN.md` | Tindakan pemulihan saat insiden |
-| `SECURITY_AND_ACCESS_CONTROL.md` | Arah desain kontrol akses |
+| `[overview/CURRENT_STATE.md](CURRENT_STATE.md)` | Pernyataan status terkini dan keterbatasan |
+| `[governance/DECISION_LOG.md](../governance/DECISION_LOG.md)` | Riwayat keputusan arsitektur dan operasional |
+| `[../operations/engineering_and_operations/RISK_REGISTER.md](../../../02-operations/engineering_and_operations/RISK_REGISTER.md)` | Daftar risiko kritis |
+| `[../operations/engineering_and_operations/TESTING_MATRIX.md](../../../02-operations/engineering_and_operations/TESTING_MATRIX.md)` | Skenario uji yang harus dipenuhi |
+| `[../operations/engineering_and_operations/PRODUCTION_READINESS_CHECKLIST.md](../../../02-operations/engineering_and_operations/PRODUCTION_READINESS_CHECKLIST.md)` | Kriteria penggunaan nyata |
+| `[../operations/engineering_and_operations/ROLLBACK_PLAN.md](../../../02-operations/engineering_and_operations/ROLLBACK_PLAN.md)` | Tindakan pemulihan saat insiden |
+| `[../operations/engineering_and_operations/SECURITY_AND_ACCESS_CONTROL.md](../../../02-operations/engineering_and_operations/SECURITY_AND_ACCESS_CONTROL.md)` | Arah desain kontrol akses |
 
 ## 14. Kesimpulan Build
 

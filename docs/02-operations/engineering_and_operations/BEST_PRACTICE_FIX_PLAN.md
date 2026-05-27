@@ -45,7 +45,7 @@ Sistem tetap belum layak production karena:
 
 ## 3. Batasan Arsitektur Yang Wajib Dipertahankan
 
-Rencana ini mengikuti keputusan di `docs/04-status/project_management_and_logs/DECISION_LOG.md`.
+Rencana ini mengikuti keputusan di `docs/04-status/project_management_and_logs/governance/DECISION_LOG.md`.
 
 | Batasan | Konsekuensi Perbaikan |
 | --- | --- |

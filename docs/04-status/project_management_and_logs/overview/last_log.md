@@ -17,7 +17,7 @@ tetap menunjuk keadaan proyek yang sudah diverifikasi.
 
 - `README.md` telah diganti dengan dokumentasi halaman depan proyek yang
   memuat fitur, struktur, setup, konfigurasi, validasi, dan tautan dokumen.
-- `docs/04-status/project_management_and_logs/Build_Summary.md` telah
+- `docs/04-status/project_management_and_logs/overview/Build_Summary.md` telah
   ditambahkan sebagai ringkasan build rinci disertai aset mockup visual
   dashboard pada `docs/assets/`.
 - Branding dokumentasi publik telah menggunakan `SIMRS Dummy`.
@@ -113,7 +113,7 @@ branch kerja lokal setelah baseline 26 Mei 2026.
   (matriks bukti uji).
 - `docs/04-status/project_management_and_logs/RISK_REGISTER.md`
   (risiko residual).
-- `docs/04-status/project_management_and_logs/TASK_LIST.md`
+- `docs/04-status/project_management_and_logs/backlog/TASK_LIST.md`
   (status pekerjaan dan backlog).
 
 ## Update Progress - 2026-05-27 (Sinkronisasi GitHub)
