@@ -91,32 +91,38 @@ Akses terhadap modul ini dibatasi hanya untuk: `Perawat Poli, Dokter Spesialis`.
 
 ---
 
-## 4. Rawat Inap (Ranap) & Bed Management
-Unit ini memegang peranan spesifik dalam rantai operasional. Berikut adalah rincian level-mikro dari perjalanan pasien hingga pergerakan data di dalam ERP.
+## 4. Kehidupan Bangsal (Rawat Inap) & Asuhan Keperawatan
+Unit Bangsal adalah tempat di mana pasien menghabiskan 90% waktunya di rumah sakit. Berbeda dengan unit lain yang transaksional, bangsal beroperasi 24/7 tanpa henti dengan dinamika *shift* perawat dan rutinitas medis yang sangat padat.
 
-### A. Perjalanan Pasien (Patient Journey)
-1. Pasien ditransfer dari IGD/Poli menuju bangsal menggunakan kursi roda/brankar.
-2. Perawat ruangan menerima operan (handover) pasien via metode SBAR.
-3. Pasien dirawat selama beberapa hari (visite dokter, pemberian obat injeksi, perawatan luka).
-4. Dokter menyatakan boleh pulang (Discharge).
+### A. Perjalanan Pasien & Rutinitas Bangsal (Patient Journey)
+1. **Penerimaan Pasien Baru (Transfer In):** Pasien tiba di bangsal dari IGD/Poli/OK. Perawat bangsal melakukan orientasi ruangan (menjelaskan tombol bel, letak kamar mandi, jadwal makan, jam besuk).
+2. **Asesmen Awal Keperawatan:** Perawat melakukan pengkajian fisik lengkap (head-to-toe), risiko jatuh (Morse Fall Scale), dan skrining nyeri.
+3. **Ronde Medis (Visite Dokter DPJP):** Setiap pagi/sore, dokter penanggung jawab (DPJP) melakukan *visite*, memeriksa pasien, membaca laporan perawat, dan memberikan instruksi pengobatan baru.
+4. **Pemberian Obat (Medication Administration):** Perawat memberikan obat ke pasien sesuai jadwal (misal: per 8 jam) dengan prinsip "7 Benar Obat" (Benar Pasien, Obat, Dosis, Cara, Waktu, Dokumentasi, Informasi).
+5. **Observasi TTV Berkala:** Pemeriksaan suhu, nadi, pernapasan, dan tekanan darah setiap 4-6 jam atau lebih sering tergantung tingkat keparahan pasien.
+6. **Perawatan Luka & Tindakan Mandiri:** Perawat melakukan ganti perban, memandikan pasien (untuk total care), atau membantu mobilisasi.
+7. **Pergantian Shift (Handover):** Setiap pergantian shift (Pagi->Siang->Malam), perawat melakukan operan bed-to-bed menggunakan metode SBAR (Situation, Background, Assessment, Recommendation).
+8. **Discharge Planning:** Persiapan kepulangan sejak H-1, edukasi perawatan di rumah, dan penyerahan resume medis serta obat pulang.
 
-### B. Perjalanan Sistem ERP (Data & Lifecycle)
-1. Modul Bed Management secara *real-time* memblokir bed saat pasien *in-transit*.
-2. CPPT (Catatan Perkembangan Pasien Terintegrasi) diisi setiap *shift*.
-3. Biaya akomodasi kamar dikalkulasi otomatis per pukul 00:00 (Midnight Census).
+### B. Perjalanan Sistem ERP (Data Lifecycle)
+1. **Bed Management Real-time:** Status kasur berubah dinamis: Kosong -> Dibooking -> Ditempati -> Rencana Pulang -> Kotor (Cleaning) -> Kosong.
+2. **E-MAR (Electronic Medication Administration Record):** Sistem mencentang *barcode* obat dan *barcode* gelang pasien sebelum perawat menyuntikkan obat untuk mencegah malpraktik (Salah Obat).
+3. **CPPT Terintegrasi:** Catatan Perkembangan Pasien Terintegrasi di mana catatan perawat, instruksi dokter, dan catatan ahli gizi tergabung dalam satu *timeline* berurutan.
+4. **Auto-Billing Akomodasi:** Pada pukul 00:00 (Midnight Census), ERP secara otomatis menagihkan biaya sewa kamar, visit dokter, dan asuhan keperawatan ke *billing* pasien tanpa campur tangan manual admin ruangan.
+5. **Request Penunjang dari Bangsal:** Perawat dapat meng-klik tombol "Order Darah" atau "Order Rontgen Bed-side" dari tablet di samping kasur pasien.
 
 ### C. Integrasi Eksternal (Bridging BPJS/Kemenkes)
-- [API/Bridging] Klaim INA-CBG Rawat Inap.
-- [API/Bridging] Sistem ketersediaan tempat tidur (Siranap Kemenkes).
+- [API/Bridging] Integrasi aplikasi SIRANAP Kemenkes (Sistem Informasi Rawat Inap) yang melaporkan ketersediaan tempat tidur RS secara *real-time* ke publik.
+- [API/Bridging] Pengiriman data LOS (Length of Stay) untuk kalkulasi INA-CBG JKN.
 
 ### D. Penanganan Edge Cases & Force Majeure
-- ⚠️ **Kasus Kritis:** Pasien minta naik kelas perawatan (Naik Hak) - ERP otomatis mengaktifkan skema *Cost Sharing* BPJS.
-- ⚠️ **Kasus Kritis:** Pasien pulang Atas Permintaan Sendiri (APS) - penandatanganan form penolakan secara elektronik.
+- ⚠️ **Kasus Kritis:** Pasien henti jantung mendadak di bangsal. Perawat menekan tombol *Code Blue*. ERP membunyikan alarm *Code Blue* di seluruh monitor perawat dan paging RS, mencatat waktu *Response Time* tim resusitasi.
+- ⚠️ **Kasus Kritis:** Pasien menolak tindakan/obat (Refusal of Treatment). Perawat mengaktifkan form penolakan digital di sistem yang wajib di-TTE (Tanda Tangan Elektronik) oleh keluarga pasien agar terhindar dari tuntutan hukum.
+- ⚠️ **Kasus Kritis:** Bayi di bangsal anak diculik. Perawat menekan tombol *Code Pink*, memicu ERP untuk mengunci (*lockdown*) seluruh pintu sayap bangsal.
+- ⚠️ **Kasus Kritis:** Pasien BPJS diam-diam naik kelas VIP atas permintaan keluarga tanpa lapor ke BPJS. ERP mendeteksi pelanggaran selisih bayar dan membekukan sementara *billing* kasir hingga administrasi selesai.
 
 ### E. Aktor Sistem (Role-Based Access Control)
-Akses terhadap modul ini dibatasi hanya untuk: `Perawat Ruangan, Dokter DPJP, Kepala Ruangan`.
-
----
+Akses terhadap modul Bangsal ini dibatasi hanya untuk: `Kepala Ruangan, Perawat Pelaksana (Shift), Dokter DPJP, Ahli Gizi Ruangan, Admin Ruangan`.
 
 ## 5. Kamar Operasi (Bedah Sentral / OK)
 Unit ini memegang peranan spesifik dalam rantai operasional. Berikut adalah rincian level-mikro dari perjalanan pasien hingga pergerakan data di dalam ERP.
