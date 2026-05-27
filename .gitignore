@@ -20,3 +20,6 @@ simulation/venv/
 
 # Captures database-backed notebook output and local connection configuration.
 simulation/simrs_real_db_simulation.ipynb
+
+# Ignore token folder
+/token/
