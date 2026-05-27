@@ -4,7 +4,7 @@
 alur pendaftaran, layanan klinis, penunjang, rawat inap, farmasi, dan kasir
 di atas database MariaDB `sik`.
 
-![Mockup dashboard SIMRS Dummy](docs/assets/mockups/01-dashboard.png)
+![Mockup dashboard SIMRS Dummy](docs/assets/simrs-dummy-dashboard-mockup.png)
 
 > [!CAUTION]
 > **Prototipe - bukan untuk operasional rumah sakit.** Kontrol akses berbasis
@@ -51,7 +51,7 @@ Klik judul layar untuk membuka visual lebih besar.
 <details open>
 <summary><strong>Dashboard - ringkasan operasional</strong></summary>
 
-![Dashboard SIMRS Dummy](docs/assets/mockups/01-dashboard.png)
+![Dashboard SIMRS Dummy](docs/assets/simrs-dummy-dashboard-mockup.png)
 
 Pusat navigasi petugas untuk memantau pasien harian, antrean, ketersediaan
 bed, pendapatan, serta mengakses modul layanan.
@@ -60,7 +60,6 @@ bed, pendapatan, serta mengakses modul layanan.
 <details>
 <summary><strong>Login - akses petugas</strong></summary>
 
-![Login SIMRS Dummy](docs/assets/mockups/02-login.png)
 
 Gerbang masuk aplikasi untuk autentikasi pengguna sebelum mengakses data dan
 layanan rumah sakit.
@@ -69,7 +68,6 @@ layanan rumah sakit.
 <details>
 <summary><strong>Pendaftaran - registrasi kunjungan</strong></summary>
 
-![Pendaftaran SIMRS Dummy](docs/assets/mockups/03-pendaftaran.png)
 
 Petugas mencari pasien, memilih poli dan dokter, lalu mencatat kunjungan.
 Alur SEP/BPJS masih berada pada konteks simulasi.
@@ -78,7 +76,6 @@ Alur SEP/BPJS masih berada pada konteks simulasi.
 <details>
 <summary><strong>Antrean - monitor poliklinik</strong></summary>
 
-![Antrean SIMRS Dummy](docs/assets/mockups/04-antrean.png)
 
 Display antrean menonjolkan pasien yang sedang dipanggil dan daftar tunggu
 per poli agar alur pelayanan mudah dipantau.
@@ -87,7 +84,6 @@ per poli agar alur pelayanan mudah dipantau.
 <details>
 <summary><strong>Bed Management - ketersediaan kamar</strong></summary>
 
-![Bed Management SIMRS Dummy](docs/assets/mockups/05-bed-management.png)
 
 Ringkasan bed kosong dan terisi per bangsal, beserta area admisi pasien rawat
 inap berdasarkan nomor rawat.
@@ -96,7 +92,6 @@ inap berdasarkan nomor rawat.
 <details>
 <summary><strong>RME - catatan klinis rawat jalan</strong></summary>
 
-![RME SIMRS Dummy](docs/assets/mockups/06-rme.png)
 
 Dokter melihat riwayat SOAP, menginput catatan baru, memilih diagnosis
 ICD-10, dan memulai permintaan resep atau pemeriksaan penunjang.
@@ -105,7 +100,6 @@ ICD-10, dan memulai permintaan resep atau pemeriksaan penunjang.
 <details>
 <summary><strong>CPPT Rawat Inap - observasi harian</strong></summary>
 
-![CPPT Rawat Inap SIMRS Dummy](docs/assets/mockups/07-cppt-rawat-inap.png)
 
 Pencatatan terintegrasi dokter dan perawat untuk observasi pasien, tanda
 vital, serta perkembangan perawatan harian.
@@ -114,7 +108,6 @@ vital, serta perkembangan perawatan harian.
 <details>
 <summary><strong>Farmasi - penyusunan e-resep</strong></summary>
 
-![Farmasi SIMRS Dummy](docs/assets/mockups/08-farmasi.png)
 
 Area penyusunan obat jadi atau racikan sebelum resep diteruskan ke apotek.
 Manajemen stok nyata masih memerlukan penguatan transaksi inventori.
@@ -123,7 +116,6 @@ Manajemen stok nyata masih memerlukan penguatan transaksi inventori.
 <details>
 <summary><strong>Apotek - validasi dan penyerahan obat</strong></summary>
 
-![Apotek SIMRS Dummy](docs/assets/mockups/09-apotek.png)
 
 Farmasis memeriksa antrean resep, validasi item obat, dan menyiapkan
 penyerahan sebelum komponen tagihan diteruskan.
@@ -132,7 +124,6 @@ penyerahan sebelum komponen tagihan diteruskan.
 <details>
 <summary><strong>Laboratorium - antrean dan hasil pemeriksaan</strong></summary>
 
-![Laboratorium SIMRS Dummy](docs/assets/mockups/10-laboratorium.png)
 
 Petugas mengelola permintaan pemeriksaan, memasukkan hasil, serta melakukan
 validasi data laboratorium.
@@ -141,7 +132,6 @@ validasi data laboratorium.
 <details>
 <summary><strong>Operasi - pencatatan tindakan</strong></summary>
 
-![Operasi SIMRS Dummy](docs/assets/mockups/11-operasi.png)
 
 Pencatatan paket tindakan operasi, jenis anestesi, tim medis, dan estimasi
 komponen penagihan pasien.
@@ -150,7 +140,6 @@ komponen penagihan pasien.
 <details>
 <summary><strong>Kasir - pembayaran dan billing</strong></summary>
 
-![Kasir SIMRS Dummy](docs/assets/mockups/12-kasir.png)
 
 Penggabungan tagihan layanan menjadi transaksi pembayaran dan nota. Generator
 nomor nota/jurnal belum aman untuk transaksi bersamaan di lingkungan produksi.
