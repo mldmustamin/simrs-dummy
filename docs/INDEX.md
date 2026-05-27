@@ -15,6 +15,10 @@ Untuk gateway navigasi AI yang paling singkat, gunakan [GATEWAY.md](GATEWAY.md).
 - [Strategi BPJS](01-architecture/Implementasi/04_BPJS_INTEGRATION_STRATEGY.md)
 - [Async Clinical Workflow](01-architecture/Implementasi/05_ASYNC_CLINICAL_WORKFLOW.md)
 
+## 1A. Mockup
+
+- [Dashboard Mockup](assets/simrs-dummy-dashboard-mockup.png)
+
 ## 2. Operasional
 
 - [Best Practice Fix Plan](02-operations/engineering_and_operations/BEST_PRACTICE_FIX_PLAN.md)
