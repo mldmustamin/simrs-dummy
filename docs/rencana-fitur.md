@@ -7,8 +7,15 @@ Rencana strategis untuk mengintegrasikan dan digitalisasi seluruh modul pelayana
 2. **Integrasi Gudang Farmasi vs Umum**: Apakah `gudangbarang` saat ini mencakup semua jenis barang medis maupun non-medis (ATK, Linen, Dapur), atau diperlukan arsitektur terpisah untuk Gudang Umum/Aset?
 3. **Akuntansi Kasir**: Apakah *Chart of Accounts* (Rekening Jurnal) sudah baku dari divisi keuangan, atau kita perlu mendefinisikan COA standar baru di dalam tabel `rekening`?
 
-## Fase Pengembangan (Roadmap Fitur)
+## Integrasi dengan Modul Existing (Kondisi Saat Ini)
+Ekspansi ini tidak dibuat dari nol, melainkan akan disuntikkan ke dalam arsitektur modul yang sudah berjalan saat ini:
+1. **Modul Pendaftaran (Berjalan)**: Sudah menghasilkan `no_rawat`. Rencana baru akan membedakan alur Penanggung Jawab (Umum vs BPJS) sejak pendaftaran agar *pricing engine* tahu tarif mana yang ditarik.
+2. **Modul Kasir & Keuangan (Prototipe)**: Sudah mampu menjumlahkan tagihan dan mem-posting Jurnal. Rencana Tahap 6 akan menyempurnakan modul ini dengan pengamanan *Pessimistic Locking* agar tidak terjadi nomor nota/jurnal ganda, serta menyelaraskan *Chart of Accounts* dengan standar akuntansi baru.
+3. **Modul RME & Poliklinik (Prototipe)**: Sudah bisa menginput SOAP. Rencana Tahap 2 akan memperluas modul ini menjadi *Dynamic Renderer* (Odontogram, Obgyn, Mata, dll) sesuai ID Poli.
+4. **Modul Farmasi (Prototipe)**: Sudah bisa menerima E-Resep. Rencana Tahap 3 akan memodifikasi logika *backend* agar benar-benar mengurangi tabel fisik stok `gudangbarang` secara presisi (bukan sekadar mengubah status bayar).
+5. **Modul Laboratorium & Operasi (Prototipe)**: Rencana Tahap 2 akan mengikat tagihan mereka ke master Buku Tarif (Tahap 1) sehingga nilai nominal tidak lagi di-*hardcode* melainkan murni dari *database*.
 
+## Fase Pengembangan (Roadmap Fitur)
 Karena cakupan ekspansi sangat masif (menyerupai migrasi ERP penuh), rencana ini dibagi menjadi beberapa *Milestones* agar pengembangan terukur dan berisiko rendah.
 
 ### Tahap 1: Modul Buku Tarif Dasar (Core Pricing Engine)
